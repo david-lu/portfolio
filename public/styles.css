@@ -1,0 +1,369 @@
+html {
+    background-color: hsla(210, 59%, 53%, 1);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.spacer {
+    flex: 1;
+}
+
+#nav-menu {
+    top: 0;
+    right: 0;
+    position: fixed;
+    text-align: right;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    padding: 20px 20px 35px 20px;
+}
+
+.nav-button {
+    position: relative;
+    z-index: 90;
+    line-height: 30px;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    transition: transform 400ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.nav-button:hover {
+    opacity: 50%;
+}
+
+.nav-button>div {
+    height: 35px;
+    display: flex;
+}
+
+.nav-button img {
+    margin: 0 6px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.nav-button span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#nav-hamburger {
+    z-index: 100;
+}
+
+#nav-art.hidden {
+    opacity: 0%;
+    transform: translateX(150px);
+}
+
+#nav-contact.hidden {
+    opacity: 0%;
+    transform: translateX(100px);
+}
+
+#sky-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, hsla(210, 59%, 53%, 1) 0%, hsla(203, 71%, 80%, 1) 100%);
+}
+
+#main {
+    width: 100vw;
+    overflow: hidden;
+}
+
+#main>div {
+    position: absolute;
+    width: 100%;
+    overflow: clip;
+}
+
+#cloud-bg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#above-cloud {
+    display: flex;
+    flex-direction: row;
+    height: 120vh;
+}
+
+#above-left {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 8;
+    width: 100%;
+    height: 100vh;
+}
+
+#above-right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 10;
+    width: 100%;
+    height: 100vh;
+}
+
+#big-info {
+    display: block;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+#big-nimbus {
+    position: absolute;
+    max-width: 100%;
+    height: 87%;
+    aspect-ratio: 0.7;
+}
+
+#big-nimbus-wrapper {
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    width: 100%;
+    aspect-ratio: 0.7;
+    animation: phone-anim 5s infinite;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes phone-anim {
+    0% {
+        transform: translate(0, -50%)
+    }
+
+    50% {
+        transform: translate(0, -52%)
+    }
+
+    100% {
+        transform: translate(0, -50%)
+    }
+}
+
+
+#big-nimbus-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('assets/mona_phone.png') no-repeat left;
+    background-size: contain;
+    z-index: 10;
+}
+
+
+@keyframes arm-anim {
+    0% {
+        transform: translate(-38%, 185%) rotate(-25deg)
+    }
+
+    50% {
+        transform: translate(-38%, 185%) rotate(15deg)
+    }
+
+    100% {
+        transform: translate(-38%, 185%) rotate(-25deg)
+    }
+}
+
+#big-nimbus-arm-image {
+    margin: 0;
+    position: absolute;
+    width: 40%;
+    aspect-ratio: 2;
+    background: url('assets/mona_phone_arm.png') no-repeat left;
+    background-size: contain;
+    animation: arm-anim 1.5s infinite;
+    animation-timing-function: ease;
+    /* transition-timing-function: ease; */
+    transform: translate(-38%, 185%);
+    transform-origin: 90% 60%;
+    z-index: 9;
+}
+
+#big-nimbus-arm-image.fast {
+    animation-duration: 0.4s;
+}
+
+
+@media screen and (orientation:portrait) {
+    #above-cloud {
+        flex-direction: column;
+    }
+    #above-left {
+        flex: 3;
+        justify-content: space-evenly;
+    }
+    #above-right {
+        flex-direction: column;
+        flex: 9;
+        justify-content: flex-start;
+    }
+    #big-nimbus {
+        height: 85%;
+        transform: scale(0.9) translate(5vw, -5%);
+    }
+}
+
+
+#below-cloud {
+    top: 120vh;
+    height: 500vh;
+}
+
+#nimbus-path {
+    width: 100%;
+    height: 100%;
+}
+
+#nimbus-path svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#nimbus-path path {
+    fill: none;
+    stroke: hsl(255, 100%, 50%);
+    stroke-width: 1px;
+    transition: stroke 0.25s ease;
+}
+
+#nimbus-element {
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 20vw;
+    display: inline;
+    offset-rotate: 0deg;
+    background-color: red;
+    position: absolute;
+    offset-path: path(var(--path));
+    transition: 0.2s ease-out;
+    z-index: 10;
+}
+
+.clouds {
+    height: 600vh;
+    pointer-events: none;
+}
+
+.cloud {
+    position: absolute;
+    z-index: inherit;
+    width: 60%;
+    height: 30vh;
+}
+
+.cloud.big {
+    width: 70%;
+    height: 45vh;
+}
+
+.cloud.bigger {
+    width: 80%;
+    height: 60vh;
+}
+
+.cloud::before {
+    content: "";
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/cloud.png') no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    /* background-color: #e121db55; */
+}
+
+.cloud-info {
+    max-width: 50vw;
+    /* max-height: 50vh; */
+    position: absolute;
+    background: url('assets/cloud.png') no-repeat cover center;
+    background-color: #ff00ff55;
+    transform: translate(0, -50%);
+    padding: 5vw;
+    z-index: 30;
+}
+
+#ground {
+    position: absolute;
+    width: 100%;
+    height: 25vh;
+    background-color: aqua;
+    z-index: 25;
+}
+
+.scroll-button {
+    background-color: #c4b73d;
+    border: none;
+    color: white;
+    padding: 5% 5%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 46px;
+    font-size: 1rem;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.scroll-button:hover {
+    background-color: #f2e56d;
+}
+
+#landing-button {
+    font-size: 1rem;
+}
+
+a:link {
+    color: #f2e56d;
+}
+
+/* visited link */
+a:visited {
+    color: #c4b73d;
+}
+
+/* mouse over link */
+a:hover {
+    color: #f5ec9f;
+}
+
+/* selected link */
+a:active {
+    color: #f2e56d;
+}

@@ -1,0 +1,133 @@
+<html>
+
+<head>
+  <title>MONA - AI Filter</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/meanderer@0.0.1/dist/meanderer.js"></script>
+  <script defer src="scripts.js"></script>
+  <meta property='og:title' content='MONA - AI Artist' />
+  <meta property='og:image' content='https://monabot.com/banner.png' />
+  <meta property='og:description' content='Use this app to make your face less ugly!' />
+  <meta property='og:url' content='https://monabot.com/' />
+  <meta property='og:image:width' content='1024' />
+  <meta property='og:image:height' content='500' />
+  <meta property='og:type' content='website' />
+</head>
+
+<body>
+  <div id="nav-menu" style="z-index: 100">
+    <button id='nav-art' class="nav-button hidden">
+      <div>
+        <img src='assets/icon-art.svg'></img>
+        <span>Portfolio</span>
+      </div>
+    </button>
+    <button id='nav-contact' class="nav-button hidden">
+      <div>
+        <img src='assets/icon-contact.svg'></img>
+        <span>Contact</span>
+      </div>
+    </button>
+    <button id='nav-hamburger' class="nav-button">
+      <img src='assets/icon-hamburger.svg'></img>
+    </button>
+  </div>
+  <div id="sky-bg"></div>
+  <div id="main">
+    <div id="above-cloud" style="z-index: 10">
+      <div class="spacer"></div>
+      <div id="above-left">
+        <div id="big-info">
+          <h1 id="big-info-header">DAVID LU</h1>
+          <p class="big-info-text">
+            David is a software engineer and artist with a decade's worth of professional experience.
+          </p>
+          <p class="big-info-text">
+            He used to code for Google but now he makes designs for animation studios.
+          </p>
+          <button id="big-info-button" class="scroll-button">Learn More</button>
+        </div>
+      </div>
+      <div id="above-right">
+        <div id="big-nimbus">
+          <div id="big-nimbus-wrapper">
+            <div id="big-nimbus-arm-image"></div>
+            <div id="big-nimbus-image"></div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+
+    <div id="below-cloud">
+      <div id="nimbus-path" style="z-index: 0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 500" preserveAspectRatio="none">
+          <path d="M 80 -40 l 0 130 l -65 100 l 70 100 l -70 100 l 0 100" />
+          <div id="nimbus-element"></div>
+        </svg>
+      </div>
+
+      <div class="cloud-info" style="left:7%; top: 70vh;">
+        <h2>University of Toronto</h2>
+        <p>On TikTok, "mogging" is a part of the "looksmaxxing" trend, which focuses on improving one's appearance.
+          It refers to being more physically attractive than others, and can involve factors like height, hair, fashion,
+          and voice.
+          To "mog" someone is to look better than them.</p>
+        <button class="scroll-button" id="button-0"></button>
+      </div>
+      <div class="cloud-info" style="right:7%; top: 150vh;">
+        <h2>Software Engineer - Google</h2>
+        <p>On TikTok, "mogging" is a part of the "looksmaxxing" trend, which focuses on improving one's appearance.
+          It refers to being more physically attractive than others, and can involve factors like height, hair, fashion,
+          and voice.
+          To "mog" someone is to look better than them.</p>
+        <button class="scroll-button" id="button-1"></button>
+      </div>
+      <div class="cloud-info" style="left:7%; top: 250vh;">
+        <h2>SKILLS</h2>
+        <p>
+          Because he's been in the business for so long, David has basically touched most frameworks and languages invented by man.
+        </p>
+        <button class="scroll-button" id="button-2"></button>
+      </div>
+      <div class="cloud-info" style="right:7%; bottom: 60vh;">
+        <p>David is currently located in Los Angeles where he spends most of his free time developing TV pitches that no one will ever see. </p>
+        <p>He's on social media. Why not give him a follow?</p>
+      </div>
+      <div class="cloud-info" style="left:20%; bottom: 35vh;">
+        <p>SOCIAL MEDIA</p>
+      </div>
+      <div id="ground" style="bottom: 0;"></div>
+    </div>
+
+    <div class="clouds" style="z-index: 0;">
+      <div class="cloud layer-1" style="left: 5%; top: -14vh"></div>
+      <div class="cloud layer-2" style="left: 67%; top: 30vh"></div>
+      <div class="cloud layer-1" style="left: 100%; top: 70vh"></div>
+      <div class="cloud layer-2" style="left: 0%; top: 120vh"></div>
+      <div class="cloud layer-1" style="left: 85%; top: 160vh"></div>
+      <div class="cloud layer-2" style="left: 66%; top: 220vh"></div>
+      <div class="cloud layer-1" style="left: 10%; top: 320vh"></div>
+    </div>
+
+    <div class="clouds" style="z-index: 100;">
+      <div class="cloud layer-1" style="left: 35%; top: 86vh"></div>
+      <div class="cloud layer-1" style="left: 50%; top: 120vh"></div>
+      <div class="cloud layer-1 big" style="left: 10%; top: 107vh"></div>
+      <div class="cloud layer-1 big" style="left: 25%; top: 100vh"></div>
+      <div class="cloud layer-1 big" style="left: 80%; top: 103vh"></div>
+      <div class="cloud layer-1" style="left: 90%; top: 112vh"></div>
+      <div class="cloud layer-1" style="left: 45%; top: 105vh"></div>
+      <div class="cloud layer-1" style="left: 60%; top: 112vh"></div>
+      <div class="cloud layer-1" style="left: 18%; top: 100vh"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>

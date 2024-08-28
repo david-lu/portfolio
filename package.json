@@ -1,0 +1,33 @@
+{
+  "name": "porfolio",
+  "version": "1.0.0",
+  "description": "Portfolio Site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david-lu/portfolio_site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david-lu/portfolio_site/issues"
+  },
+  "homepage": "https://github.com/david-lu/portfolio_site#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "http-server": "^14.1.1",
+    "meanderer": "^0.0.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "globals": "^15.9.0",
+    "nodemon": "^2.0.4"
+  }
+}
