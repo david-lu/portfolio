@@ -94,7 +94,7 @@ p {
 
 #main {
     width: 100vw;
-    overflow: hidden;
+    overflow: visible;
 }
 
 #main>div {
@@ -103,12 +103,10 @@ p {
     overflow: clip;
 }
 
-#cloud-bg {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.clouds {
+    height: 600vh;
+    pointer-events: none;
+    overflow: visible;
 }
 
 #above-cloud {
@@ -275,11 +273,6 @@ p {
     z-index: 10;
 }
 
-.clouds {
-    height: 600vh;
-    pointer-events: none;
-}
-
 .cloud {
     position: absolute;
     z-index: inherit;
@@ -329,15 +322,18 @@ p {
 }
 
 .scroll-button {
-    background-color: #c4b73d;
-    border: none;
-    color: white;
-    padding: 5% 5%;
+    background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.842) 13%, rgba(255, 255, 255, 0) 20%),
+    linear-gradient(to bottom right, orange 45%, #ffa50000 80%),
+    radial-gradient(rgb(255, 196, 87) 30%, orange 34%, red 60%);
+    box-shadow: inset 0px 0px 5px 5px rgb(255, 184, 19);
+    color: #d54806;
+    padding: 7%;
     text-align: center;
     cursor: pointer;
+    border: none;
     border-radius: 46px;
     font-size: 1rem;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.4);
     z-index: 100;
 }
 
