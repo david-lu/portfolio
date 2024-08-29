@@ -25,7 +25,7 @@ const makeScroll = (button, target, duration = 1) => {
     })
   );
 };
-makeScroll("#big-info-button", '#button-0');
+makeScroll("#big-info button", '#button-0');
 makeScroll("#button-0", '#button-1');
 makeScroll("#button-1", '#button-2');
 makeScroll("#button-2", 'max');
@@ -45,22 +45,22 @@ gsap.to("#above-right", {
   scrollTrigger: ABOVE_CLOUD_TRIGGER,
 });
 
-gsap.to("#big-info-header", {
+gsap.to("#big-info h1", {
   yPercent: '-150',
   ease: "ease-in",
   scrollTrigger: ABOVE_CLOUD_TRIGGER,
 });
 
-gsap.utils.toArray('.big-info-text').forEach((text) => {
+gsap.utils.toArray('#big-info p').forEach((text, i) => {
   gsap.to(text, {
-    yPercent: '-100',
+    yPercent: -110 + (i * 40),
     ease: "ease-in",
     scrollTrigger: ABOVE_CLOUD_TRIGGER,
   });
 });
 
-gsap.to("#big-info-button", {
-  yPercent: '-40',
+gsap.to("#big-info button", {
+  yPercent: '-30',
   ease: "ease-in",
   scrollTrigger: ABOVE_CLOUD_TRIGGER,
 });

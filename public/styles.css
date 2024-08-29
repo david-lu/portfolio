@@ -345,9 +345,8 @@ p {
     z-index: 50;
 }
 
-.info.cloud>p {
-    margin: 5px 0 0 0;
-    text-align: center;
+.cloud .icon {
+    margin: 0.6rem;
 }
 
 #ground {
