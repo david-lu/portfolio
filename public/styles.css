@@ -90,6 +90,7 @@ p {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, hsla(210, 59%, 53%, 1) 0%, hsla(203, 71%, 80%, 1) 100%);
+    z-index: -100;
 }
 
 #main {
@@ -106,7 +107,6 @@ p {
 .clouds {
     height: 600vh;
     pointer-events: none;
-    overflow: visible;
 }
 
 #above-cloud {
@@ -220,15 +220,18 @@ p {
     #above-cloud {
         flex-direction: column;
     }
+
     #above-left {
         flex: 3;
         justify-content: space-evenly;
     }
+
     #above-right {
         flex-direction: column;
         flex: 9;
         justify-content: flex-start;
     }
+
     #big-nimbus {
         height: 85%;
         transform: scale(0.9) translate(5vw, -5%);
@@ -254,7 +257,7 @@ p {
 
 #nimbus-path path {
     fill: none;
-    stroke: hsl(255, 100%, 50%);
+    stroke: hsl(38, 100%, 50%);
     stroke-width: 1px;
     transition: stroke 0.25s ease;
 }
@@ -266,9 +269,11 @@ p {
     height: 20vw;
     display: inline;
     offset-rotate: 0deg;
-    background-color: red;
+    background: url('assets/small-nimbus.webp') no-repeat center;
+    background-size: contain;
     position: absolute;
     offset-path: path(var(--path));
+    transform: translateY(-40%);
     transition: 0.2s ease-out;
     z-index: 10;
 }
@@ -302,15 +307,47 @@ p {
     /* background-color: #e121db55; */
 }
 
-.cloud-info {
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     max-width: 50vw;
-    /* max-height: 50vh; */
     position: absolute;
-    background: url('assets/cloud.png') no-repeat cover center;
     background-color: #ff00ff55;
-    transform: translate(0, -50%);
-    padding: 5vw;
+    padding: 4vw;
     z-index: 30;
+    box-sizing: border-box;
+}
+
+.info.cloud {
+    width: auto;
+    height: auto;
+}
+
+.info.cloud::before {
+    left: 50%;
+    top: 50%;
+    z-index: 20;
+    background-size: 100% 100%;
+}
+
+.info>p {
+    position: relative;
+    z-index: 21;
+}
+
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    background-size: 100% 100%;
+    z-index: 50;
+}
+
+.info.cloud>p {
+    margin: 5px 0 0 0;
+    text-align: center;
 }
 
 #ground {
@@ -321,14 +358,14 @@ p {
     z-index: 25;
 }
 
-.scroll-button {
-    background-image: 
-    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.842) 13%, rgba(255, 255, 255, 0) 20%),
-    linear-gradient(to bottom right, orange 45%, #ffa50000 80%),
-    radial-gradient(rgb(255, 196, 87) 30%, orange 34%, red 60%);
+.db-button {
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.842) 13%, rgba(255, 255, 255, 0) 20%),
+        linear-gradient(to bottom right, orange 45%, #ffa50000 80%),
+        radial-gradient(rgb(255, 196, 87) 30%, orange 34%, red 60%);
     box-shadow: inset 0px 0px 5px 5px rgb(255, 184, 19);
     color: #d54806;
-    padding: 7%;
+    padding: 1.5rem;
     text-align: center;
     cursor: pointer;
     border: none;
@@ -337,29 +374,10 @@ p {
     z-index: 100;
 }
 
-.scroll-button:hover {
-    background-color: #f2e56d;
-}
-
-#landing-button {
-    font-size: 1rem;
-}
-
-a:link {
-    color: #f2e56d;
-}
-
-/* visited link */
-a:visited {
-    color: #c4b73d;
-}
-
-/* mouse over link */
-a:hover {
-    color: #f5ec9f;
-}
-
-/* selected link */
-a:active {
-    color: #f2e56d;
+.db-button:hover {
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.842) 13%, rgba(255, 255, 255, 0) 20%),
+        linear-gradient(to bottom right, rgb(255, 206, 59) 45%, #ffa50000 80%),
+        radial-gradient(rgb(255, 219, 111) 30%, rgb(255, 206, 59) 34%, rgb(244, 84, 20) 60%);
+    box-shadow: inset 0px 0px 5px 5px rgb(255, 228, 108);
 }

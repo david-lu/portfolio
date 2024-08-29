@@ -72,6 +72,7 @@ document.querySelector('#big-nimbus').addEventListener('click', () => {
 // GSAP BELOW CLOUD
 const parallax = (element, yPercent, markers = false) => {
   gsap.to(element, {
+    y: '-50%',
     yPercent: yPercent,
     scrollTrigger: {
       trigger: element,
@@ -84,7 +85,7 @@ const parallax = (element, yPercent, markers = false) => {
   });
 };
 
-const infos = gsap.utils.toArray('.cloud-info');
+const infos = gsap.utils.toArray('.info');
 infos.forEach((info) => {
   parallax(info, 30, true);
 });
