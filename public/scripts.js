@@ -53,7 +53,7 @@ gsap.to("#big-info h1", {
 
 gsap.utils.toArray('#big-info p').forEach((text, i) => {
   gsap.to(text, {
-    yPercent: -110 + (i * 40),
+    yPercent: -150 + ((i + 1) * ((150 - 30) / 2)),
     ease: "ease-in",
     scrollTrigger: ABOVE_CLOUD_TRIGGER,
   });
